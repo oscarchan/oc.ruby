@@ -1,0 +1,64 @@
+#! /usr/bin/env ruby
+
+###
+#  ~/workspace/oc.ruby/mmv *-?-* 's/-(?<disc>[0-9])-/-0\k<disc>-/'
+###
+
+
+
+require 'optparse'
+
+ # This hash will hold all of the options
+ # parsed from the command-line by
+ # OptionParser.
+ options = {}
+ 
+ optparse = OptionParser.new do|opts|
+   # Set a banner, displayed at the top
+   # of the help screen.
+
+   opts.banner = "Usage: mmv.rb file1 file2 ... 's/matching pattern/replacement'"
+ 
+   # Define the options, and what they do
+   options[:verbose] = false
+   opts.on( '-v', '--verbose', 'Output more information' ) do
+     options[:verbose] = true
+   end
+ 
+   # This displays the help screen, all programs are
+   # assumed to have this option.
+   opts.on( '-h', '--help', 'Display this screen' ) do
+     puts opts
+     exit
+   end
+ end
+ 
+ # Parse the command-line. Remember there are two forms
+ # of the parse method. The 'parse' method simply parses
+ # ARGV, while the 'parse!' method parses ARGV and removes
+ # any options found there, as well as any parameters for
+ # the options. What's left is the list of files to resize.
+ optparse.parse!
+ 
+ puts "Being verbose" if options[:verbose]
+ puts "Being quick" if options[:quick]
+ puts "Logging to file #{options[:logfile]}" if options[:logfile]
+
+ sub_pattern = ARGV.pop
+ patterns = sub_pattern.split %r{(?<!\\)/}
+
+ matching_pattern = Regexp.new(patterns[1])
+ replacement = patterns[2]
+ 
+ puts "matching #{matching_pattern}"
+ puts "replacing with #{replacement}"
+
+ ARGV.each do |original|
+  puts "original `#{original}`"
+  updated = original.gsub matching_pattern, replacement
+  puts "mv #{original} #{updated}"
+  File.rename original, updated
+ end
+
+
+

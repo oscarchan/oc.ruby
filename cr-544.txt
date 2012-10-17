@@ -1,0 +1,701 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Log in to FishEye and Crucible 2.7.8</title>
+    
+
+<link rel="SHORTCUT ICON" href="/crucible/static/lvgkeu/images/favicon.ico">
+
+
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/concat.style.b144d72cdf90dbfc7346e2e798829575.cache.css">
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/controls/concat.style.1a702dba8240c1ffb83a2124d685a331.cache.css">
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/jquery/plugin/concat.style.8e769110826f75e1f5badbe45761fd15.cache.css">
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/style-ie.css">
+<style>/* IE6, IE7, IE8: moved inline from fancybox-overrides.css as IE does not respect relative paths from the CSS file. See FE-3015. */
+.fancybox-ie .fancybox-bg { background: transparent !important; }
+.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_n.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_e.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_se.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_s.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_w.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/crucible/static/lvgkeu/2static/images/jquery/plugin/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
+</style>
+<![endif]-->
+
+<script type="text/javascript" src="/crucible/static/lvgkeu/concat.aui.c8771d475e8b0ad1d340db23860de48d.cache.js"></script>
+
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/jquery/theme/concat.aui.66772a9535c165201741278510c0dfdc.cache.css">
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/aui/css/atlassian/concat.aui.4006dac3b75f9acbff6257f7f134bfc0.cache.css">
+
+                                           <!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/aui/css/atlassian/concat.aui-ie.5efc9663045d0b2daa770b2926a542ef.cache.css">
+
+       <![endif]--><!--[if gte IE 9]>
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/aui/css/atlassian/concat.aui-ie9.a179c660d6385836a6de1d05fbaa03a9.cache.css">
+
+  <![endif]--><link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/dropdown-base.css">
+
+
+
+
+
+<!-- Start WebResourceManager included resources -->
+
+<!-- End WebResourceManager included resources -->
+
+<script type="text/javascript" src="/crucible/static/lvgkeu/concat.jquery.3adde9c920f113c383f8c90e128a4aed.cache.js"></script>
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<script type="text/javascript">jQuery.noConflict();</script>
+
+<script type="text/javascript" src="/crucible/static/lvgkeu/concat.fecru.8fca916a871a674f722976f2168c78a4.cache.js"></script>
+
+<link type="text/css" rel="stylesheet" href="/crucible/static/lvgkeu/2static/style/cru/concat.fecru.706919553fccac00ef7cd73870b50318.cache.css">
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+<!--[if IE]>
+<script type="text/javascript" src="/crucible/static/lvgkeu/2static/script/fecru/ie.js"></script>
+<![endif]-->
+
+
+<script type="text/javascript">
+    window.FECRU = window.FECRU || {};
+    FECRU.pageContext = "/crucible";
+    FECRU.staticDirectory = "static/lvgkeu";
+    FECRU.userTimeZoneOffset = "-480";
+    FECRU.isAnon = true;
+</script>
+
+
+
+</head>
+
+<body id="section-login">
+
+<div id="atlas">
+    
+
+    
+
+
+
+
+
+
+    
+        
+        
+    
+
+
+
+    <div id="header">
+        <div id="header-top">
+            
+
+
+
+
+
+
+
+            
+                
+
+            
+            
+            
+                
+                
+                
+                    
+                
+            
+            
+            <a class="fecru" title="FishEye and Crucible" href="/crucible/" id="product-name">FishEye and Crucible</a>
+            
+                
+            
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.FECRU = window.FECRU || {};
+
+    
+    FECRU.quickSearchUrl = "/crucible/json/fe/quicknav-ajax.do?";
+
+    
+
+    </script>
+<form method="get" action="/crucible/qsearch" id="quick-search-form">
+        <img id="busyQnav" alt="busy" name="busyQnav"
+                     src="/crucible/static/lvgkeu/images/spinner.gif">
+    <label for="quick-search-input">Quick Search:</label>
+    <input class="qsInput"
+           id="quick-search-input"
+           name="q"
+           type="text"
+           size="15"
+           value="Search"
+    >
+    
+    <input type="hidden" name="r" value="true"/>
+    
+    <div id="quick-search-dropdown-holder" class="aui-dd-parent"></div>
+    <label for="quick-search-input" class="end">Search</label>
+<script type="text/javascript">
+    AJS.$("#quick-search-form .qsInput").attr("autocomplete","off");
+
+    AJS.toInit(function() {
+        FECRU.UI.setupQuicksearch();
+        AJS.$("#quick-search-form").delegate("a.quick-search-redo", "click", function(e) {
+            AJS.$(e.target).trigger("menuItemSelected");
+            e.preventDefault();
+            return false;
+        });
+        AJS.$("#quick-search-form").delegate("a.quick-search-redo", "menuItemSelected", function(e) {
+            // Expands search from single repo to cross repo
+            FECRU.UI.refreshSearch("/crucible/json/fe/quicknav-ajax.do?");
+            return false;
+        });
+    });
+</script>
+</form>
+
+
+                
+            <ul id="header-details">
+                
+                
+            </ul>
+        </div>
+        <div id="header-bottom">
+
+            
+            
+
+            
+            
+            
+
+            <div id="menu">
+                <ul id="main-nav" class="menu-bar">
+                    <li class=" tab-simple">
+                        <a href="/crucible/" class=" lnk">Dashboard</a>
+                    </li>
+                    
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li  class="aui-dd-parent aui-dd-nav source-dd-parent">
+
+<a
+            href="/crucible/browse"
+class=" lnk">Source</a>
+
+<span class="drop-wrap">
+<a  class="aui-dropdown-trigger aui-dd-link drop " title="Recently Viewed Repositories"><span>Recently Viewed Repositories</span></a>
+</span>
+<div class="dropdown-holder">
+<div class="aui-dropdown hidden aui-dropdown-left source-dropdown ">
+
+                                <ol class="dropdown-last">
+                                    <li>
+                                        <a href="/crucible/browse">All Repositories</a>
+                                    </li>
+                                </ol>
+</div>
+</div>
+</li>
+
+
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li  class="aui-dd-parent aui-dd-nav projects-dd-parent">
+
+<a
+            href="/crucible/projects"
+class=" lnk">Projects</a>
+
+<span class="drop-wrap">
+<a  class="aui-dropdown-trigger aui-dd-link drop " title="Recently Viewed Projects"><span>Recently Viewed Projects</span></a>
+</span>
+<div class="dropdown-holder">
+<div class="aui-dropdown hidden aui-dropdown-left projects-dropdown ">
+
+                                <ol class="dropdown-last">
+                                    <li>
+                                        <a href="/crucible/projects">All Projects</a>
+                                    </li>
+                                </ol>
+</div>
+</div>
+</li>
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li  class="aui-dd-parent aui-dd-nav people-dd-parent">
+
+<a
+            href="/crucible/users"
+class=" lnk">People</a>
+
+<span class="drop-wrap">
+<a  class="aui-dropdown-trigger aui-dd-link drop " title="Recently Viewed Users"><span>Recently Viewed Users</span></a>
+</span>
+<div class="dropdown-holder">
+<div class="aui-dropdown hidden aui-dropdown-left people-dropdown ">
+<ol class="dropdown-last">
+                                    <li>
+                                        <a href="/crucible/users">All Users</a>
+                                    </li>
+                                </ol>
+</div>
+</div>
+</li>
+
+
+                    
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li  class="aui-dd-parent aui-dd-nav reviews-dd-parent">
+
+<a
+            href="/crucible/cru"
+class=" lnk">Reviews</a>
+
+<span class="drop-wrap">
+<a  class="aui-dropdown-trigger aui-dd-link drop " title="Recently Viewed Reviews"><span>Recently Viewed Reviews</span></a>
+</span>
+<div class="dropdown-holder">
+<div class="aui-dropdown hidden aui-dropdown-left reviews-dropdown ">
+
+                                
+
+                                
+                                
+                                    
+                                    <ol>
+                                        <li>
+                                            <a href="/crucible/plugins/servlet/jira-blockers/">Reports</a>
+                                        </li>
+                                    </ol>
+                                
+
+                                <ol class="dropdown-last">
+                                    <li>
+                                        <a href="/crucible/cru?filter=allOpenReviews">All Reviews</a>
+                                    </li>
+                                </ol>
+</div>
+</div>
+</li>
+
+
+                    
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div id="content">
+        <div id="content-single">
+
+            <div id="signup">
+
+                
+
+                    <div class="login-success">
+                        <h3>Log in to FishEye and Crucible</h3>
+                    </div>
+
+                    <form accept-charset="UTF-8" action="/crucible/login" method="POST" name="loginform">
+                        <input type="hidden" name="origUrl" value="">
+
+                        <table class="login-options">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="username" class="key">Username:</label>
+                                    </td>
+                                    <td>
+                                        <input name="username" id="username" type="text" class="text"  maxLength="255" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="password" class="key">Password:</label>
+                                    </td>
+                                    <td>
+                                        <input name="password" id="password" type="password" class="text">
+                                    </td>
+                                </tr>
+                                
+                                <tr class="hidden"> 
+                                    <td>
+                                        <label for="password" class="key">&nbsp;</label>
+                                    </td>
+                                    <td>
+                                        <input name="rememberme" id="remember" type="checkbox" checked="checked" value="yes">
+                                        <label for="remember">Remember my login on this computer.</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="submit" class="key">&nbsp;</label>
+                                    </td>
+                                    <td>
+                                        <input type="submit" id="submit" value="Log in">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    
+                    <div class="login-right">
+                        <a href="/crucible/login/retrievePassword-default.do"
+                           class="verb">Forgot your password?</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="footer">
+    <div class="fineprint">
+        Atlassian
+        
+            <a class="smalltext" href="http://www.atlassian.com/software/fisheye/">FishEye
+                
+                     analysis
+                
+                
+            </a>
+        
+        
+            with
+        
+        
+            <a class="smalltext" href="http://www.atlassian.com/software/crucible/">Crucible code review</a>.
+        
+
+        
+
+        
+            (Version:2.7.8
+    
+            Build:20111130052542 2011-11-30)
+            
+        
+
+        
+             - 
+            <a class="smalltext" href="/crucible/admin/">Administration</a>
+            
+        
+
+        
+            
+             - 
+            Page generated 2012-04-06 11:54 -0700
+        
+
+    </div>
+
+    <div id="footer-bar">
+
+        
+
+
+
+
+
+
+
+        
+
+        
+            
+                <div class="system-message">
+                    <div class="licensemessage">
+                        Crucible: Evaluation License registered to Zynga.
+                        
+                    </div>
+                </div>
+            
+            
+        
+
+        
+            <div class="system-message">
+                <div class="licensemessage">
+                    <strong>
+                        <a class="smalltext" href="http://www.atlassian.com/software/fisheye/CrucibleDownloadCenter.jspa">
+                            Version 2.7.11 is available.</a>
+                        
+                    </strong>
+                </div>
+            </div>
+        
+
+    </div>
+
+</div>
+
+
+<div id="errorBox-container" style="display: none;">
+    <div id="errorBox">
+        <div id="errorDetails">
+            <div id="errorResponses"></div>
+
+            <div class="errorProductDetails">
+                You are running release
+                
+                CR2.7.8
+                
+                FE2.7.8
+                (20111130052542 2011-11-30),
+                please report your release number when reporting bugs.
+            </div>
+
+            <div class="errorAtlassianHelp">
+                <p>Got a suggestion or an issue?<br>
+                    Discuss it in <a href="http://forums.atlassian.com">our forums</a> or
+                    visit our <a href="http://support.atlassian.com">support website</a> for other options.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--
+page produced in 7 ms
+-->
+
+<script type="text/javascript">
+    // If we're in an iframe -- bust our asses outta here!
+    if (top != self) {
+        top.location = '/crucible/login?origUrl=' + top.location;
+    } else {
+        AJS.$(document).ready(function() {
+            document.loginform.username.focus();
+        });
+    }
+</script>
+
+</body>
+</html>

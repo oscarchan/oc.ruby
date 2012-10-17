@@ -1,0 +1,145 @@
+
+This is a list of all comments for CR-733.
+
+Review Summary: No summary
+
+General Comment by Alejandro Rivera on 03 April 2012, 05:26 
+https://crucible.payments.zynga.com/crucible/cru/CR-733/#c2,198
+
+  Added changeset
+  {cs:id=2ba23010b12b04391f0878f5a2c6c2584fed4b33|rep=Payments}
+  to this review: 
+  
+  PAY-12964: Updating to RESTEasy 2.3.2.FINAL. Code Reviewer(s):
+  @ochan @wilson @awu
+
+General Comment by Alejandro Rivera on 03 April 2012, 05:28 
+https://crucible.payments.zynga.com/crucible/cru/CR-733/#c2,199
+
+  Added changeset
+  {cs:id=5551be9b3ac20f62551d8fc2374845d5224c738b|rep=Payments}
+  to this review: 
+  
+  PAY-12964: Updating to RESTEasy 2.3.2.FINAL. Code Reviewer(s):
+  @ochan @wilson @philip
+
+General Comment by Alejandro Rivera on 03 April 2012, 05:52 
+https://crucible.payments.zynga.com/crucible/cru/CR-733/#c2,200
+
+  Added changeset
+  {cs:id=ed92632429731810f7d6a8707b499aec71613c57|rep=Payments}
+  to this review: 
+  
+  PAY-12964: Updating to RESTEasy 2.3.2.FINAL. Code Reviewer(s):
+  @ochan @wilson @cchen
+
+General Comment by Alejandro Rivera on 03 April 2012, 05:58 
+https://crucible.payments.zynga.com/crucible/cru/CR-733/#c2,201
+
+  Added changeset
+  {cs:id=acd0233244abe42648da319e989bfa2e73f65dde|rep=Payments}
+  to this review: 
+  
+  PAY-12964: Updating dependencies to rely on latest version of
+  *-client projects which now rely on RESTEasy 2.3.2.FINAL.
+  @ochan @wilson @philip
+
+
+----------------------------------------
+File: grantitem/grantitem-client/src/main/java/com/zynga/payment/grantitem/client/GrantItemExceptionMapper.java
+Revision Comment by ochan on 04 April 2012, 20:24 
+https://crucible.payments.zynga.com/crucible/cru/CR-733/#c2,247
+
+  did we ever InputStream.mark() ?   Why are we resetting?  As
+  this is not common, can you put in some description in codes on
+  why this is required.
+
+  Reply by Alejandro Rivera on 04 April 2012, 20:30
+  > From:
+  > http://docs.jboss.org/resteasy/2.0.0.GA/userguide/html/RESTEasy_Client_Framework.html
+  > {quote}
+  > ClientErrorInterceptor provides a hook into the proxy
+  > ClientResponse request lifecycle. If a Client Proxy method is
+  > called, resulting in a client exception, and the proxy return
+  > type is not Response or ClientResponse, registered
+  > interceptors will be given a chance to process the response
+  > manually, or throw a new exception. If all interceptors
+  > successfully return, RestEasy will re-throw the original
+  > encountered exception. Note, however, that the response input
+  > stream may need to be reset before additional reads will
+  > succeed.
+  > 
+  > {code}
+  > public class ExampleInterceptor implements
+  > ClientErrorInterceptor
+  > {
+  > 	public void handle(ClientResponse response) throws
+  > RuntimeException
+  > 	{
+  > 		try
+  > 		{
+  > 			BaseClientResponse r = (BaseClientResponse) response;
+  > 			InputStream stream =
+  > r.getStreamFactory().getInputStream();
+  > 			stream.reset();
+  > 			
+  > 			String data = response.getEntity(String.class);
+  > 		
+  > 		
+  > 			if(FORBIDDEN.equals(response.getResponseStatus()))
+  > 			{
+  > 				throw new MyCustomException("This exception will be
+  > thrown "
+  > 					+ "instead of the ClientResponseFailure");
+  > 			}
+  > 		
+  > 		}
+  > 		catch (IOException e)
+  > 		{
+  > 			//...
+  > 		}
+  > 		// If we got here, and this method returns successfully, 
+  > 		// RESTEasy will throw the original ClientResponseFailure
+  > 	}
+  > }
+  > {code}
+  > {quote}
+
+    Reply by Wilson Gee on 04 April 2012, 22:11
+    > Are we sure the stream starts at the very beginning or has
+    > been marked at a specific location to reset to?
+
+      Reply by Alejandro Rivera on 04 April 2012, 22:32
+      > I'd need to dig in their source code to find the call,
+      > but I don't think it's necessary to do so since right
+      > after I updated the version, I got IOExceptions derived
+      > from reaching the end of the input stream. I couldn't
+      > figure out what was the issue and it was until I ran into
+      > the sample code (shown above) that I noticed the need to
+      > have a reset(). After doing this, I never got any more
+      > IOExceptions.
+
+
+---
+
+ID: CR-733 https://crucible.payments.zynga.com/crucible/cru/CR-733
+
+Title: PAY-12964: Updating to RESTEasy 2.3.2.FINAL. Code Reviewer(s): @ochan @wilson @awu
+Statement of Objectives:
+PAY-12964: Updating to RESTEasy 2.3.2.FINAL. Code Reviewer(s): @ochan @wilson @awu
+
+
+State: Closed
+
+Summary: 
+
+Author: Alejandro Rivera
+Moderator: Alejandro Rivera
+Reviewers: (1 active, 4 completed*)
+     ochan   (*)
+     awu   (*)
+     philip   (*)
+     Wilson Gee   (*)
+     cchen
+
+
